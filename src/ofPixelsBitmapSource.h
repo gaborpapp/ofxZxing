@@ -1,6 +1,6 @@
 #pragma once
 
-#include <zxing/LuminanceSource.h>
+#include "zxing/LuminanceSource.h"
 #include "ofPixels.h"
 
 namespace zxing {
@@ -11,7 +11,7 @@ private:
   ofPixels& image_;
   int width;
   int height;
-	const unsigned char* pixel_cache;
+  const unsigned char* pixel_cache;
 
 public:
   ofPixelsBitmapSource(ofPixels& image);
@@ -20,10 +20,10 @@ public:
 
   int getWidth() const;
   int getHeight() const;
-  unsigned char* getRow(int y, unsigned char* row);
-  unsigned char* getMatrix();
+  zxing::ArrayRef<char> getRow(int y, zxing::ArrayRef<char> row) const;
+  zxing::ArrayRef<char> getMatrix() const;
   bool isRotateSupported() const;
-  Ref<LuminanceSource> rotateCounterClockwise();
+  Ref<LuminanceSource> rotateCounterClockwise() const;
 };
 
 }

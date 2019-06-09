@@ -4,6 +4,13 @@ ofxZxing runs against the latest version of openFrameworks, available on GitHub 
 
 ZXing ("Zebra Crossing") is included as a static i386 library in the repository. To compile from source, check out from the ZXing project at https://code.google.com/p/zxing/ The included library was compiled with NO_ICONV defined.
 
+```
+mkdir build
+cd build
+cmake .. -DCMAKE_CXX_FLAGS="-DNO_ICONV=1" -DCMAKE_C_FLAGS="-DNO_ICONV=1"
+make -j
+```
+
 If you want to make a project using ofxZxing from scratch, make sure to add the ofxZxing/include folder to your header search path.
 
 IPHONE specific instructions - 
