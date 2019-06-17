@@ -71,3 +71,6 @@ common:
 
 osx:
 	ADDON_LIBS = libs/zxing/osx/libzxing.a
+
+linux64:
+	ADDON_LIBS = libs/zxing/linux64/libzxing.a
